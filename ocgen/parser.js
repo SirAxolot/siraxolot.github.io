@@ -4,7 +4,7 @@ function RandInt(max) {
 
 function splitarray(inp)
 {  
-    var text = readFileSync("./" + inp + ".txt").toString('utf-8');
+    var text = require("fs").readFileSync("./" + inp + ".txt").toString('utf-8');
     return text.split(",");
 }
 
