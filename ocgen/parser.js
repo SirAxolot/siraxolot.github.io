@@ -13,5 +13,10 @@ var adj = splitarray("adj");
 var verb = splitarray("actions");
 var sentences = splitarray("sentences");
 var rng = Date.now;
-const myElement = document.getElementById("field");
-myElement.innerText = nouns[RandInt(nouns.length)];
+
+console.log(nouns);
+console.log(sentences);
+console.log(verb);
+console.log(adj);
+/*const myElement = document.getElementById("field");
+myElement.innerText = nouns[RandInt(nouns.length)];*/
