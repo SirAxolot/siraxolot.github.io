@@ -4,7 +4,7 @@ function RandInt(max) {
 
 function splitarray(inp)
 {  
-    var text = fs.readFileSync("./" + inp + ".txt").toString('utf-8');
+    var text = readFileSync("./" + inp + ".txt").toString('utf-8');
     return text.split(",");
 }
 
