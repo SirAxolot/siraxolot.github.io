@@ -5,11 +5,8 @@ function RandInt(max) {
 function splitarray(inp)
 {  
     var client = new XMLHttpRequest();
-    client.open('GET', "./" + inp + ".txt");
-    client.onreadystatechange = function() {
-    alert(client.responseText);
-    };
-client.send();
+    let file = client.open('GET', "./" + inp + ".txt");
+    client.send();
     let text = (file).toString('utf-8');
     return text.split("\n");
 }
