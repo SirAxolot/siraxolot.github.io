@@ -4,15 +4,25 @@ function RandInt(max) {
 
 function splitarray(inp)
 {  
-    var text = require("fs").readFileSync("./" + inp + ".txt").toString('utf-8');
-    return text.split(",");
+    var client = new XMLHttpRequest();
+    client.open('GET', "./" + inp + ".txt");
+    client.onreadystatechange = function() {
+    alert(client.responseText);
+    };
+client.send();
+    let text = (file).toString('utf-8');
+    return text.split("\n");
 }
 
-var nouns = splitarray("nouns");
-var adj = splitarray("adj");
-var verb = splitarray("actions");
-var sentences = splitarray("sentences");
+const actions = splitarray("actions");
+const nouns = splitarray("nouns");
 
-print(nouns[RandInt(nouns.length)]);
-/*const myElement = document.getElementById("field");
-myElement.innerText = nouns[RandInt(nouns.length)];*/
+function Refresh() {
+    if (RandInt(5) = 5) {
+        let text = actions[RandInt(actions.length)];
+        document.getElementById('output').innerHTML = text;
+    } else {
+        let text = actions[RandInt(actions.length)] + nouns[RandInt(nouns.length)];
+        document.getElementById('output').innerHTML = text;
+    }
+}
