@@ -5,7 +5,7 @@ function RandInt(max) {
 function splitarray(inp)
 {  
     var client = new XMLHttpRequest();
-    let file = client.open('GET', "./" + inp + ".txt");
+    let file = client.open('GET', "./ocgen/" + inp + ".txt");
     client.send();
     let text = (file).toString('utf-8');
     return text.split("\n");
@@ -15,7 +15,7 @@ const actions = splitarray("actions");
 const nouns = splitarray("nouns");
 
 function Refresh() {
-    if (RandInt(5) = 5) 
+    if (RandInt(5) == 5) 
     {
         let text = actions[RandInt(actions.length)];
         document.getElementById('output').innerHTML = text;
