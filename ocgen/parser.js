@@ -15,10 +15,13 @@ const actions = splitarray("actions");
 const nouns = splitarray("nouns");
 
 function Refresh() {
-    if (RandInt(5) = 5) {
+    if (RandInt(5) = 5) 
+    {
         let text = actions[RandInt(actions.length)];
         document.getElementById('output').innerHTML = text;
-    } else {
+    } 
+    else 
+    {
         let text = actions[RandInt(actions.length)] + nouns[RandInt(nouns.length)];
         document.getElementById('output').innerHTML = text;
     }
