@@ -4,87 +4,72 @@
 
 let categories = {};
 let recently_used = [];
-let character_is_group = false;
-let character_post_description = '';
 
 window.onload = function onLoad() {
 	// Store list of entries by category name
 	for (let i = 0; i < category_names.length; i ++) {
-		name = category_names[i];
+		let name = category_names[i];
 		categories[name] = getCategory(name);
 	}
 }
 
 function generate() {
-	reset();
 	let template = pickRandom('template');
 	let result = fillInTemplate(template);
 	result = formatOutput(result);
-	document.getElementById("content").innerHTML = result;
+	document.getElementById("content").innerText = "Draw your OC " + result;
 }
 
-function reset() {
-	character_post_description = '';
-	recently_used.length = 0;
-	character_is_group = false;
-}
 
 function fillInTemplate(template) {
 	// @ symbol represents a generator. So '@character@', for example,
 	// should be replaced with a call to the generateCharacter function
-	if (template.includes('@')) {
-		let command = getTextBetweenTags(template, '@', '@');
-		let replacement = 'NO REPLACEMENT FOUND';
-		let generator = command.split(':')[0];
-		let parameters = [];
-		if (command.includes(':')) {
-			parameters = command.split(':')[1].split(',');
-		}
-		switch (generator) {
-			case 'template':
-				replacement = pickRandom('template');
-				break;
-			case 'nouns':
-				replacement = pickRandom('nouns');
-				break;
-			case 'actions-singular':
-				replacement = pickRandom('actions-singular');
-				break;
-            case 'people':
-                replacement = pickRandom('people');
-                break;
-            case 'places':
-                replacement = pickRandom('places');
-                break;
-            case 'descriptor':
-                replacement = pickRandom('descriptor');
-                break;
-		}
-
-		template = replaceTextBetweenTags(template, replacement, '@', '@');
-		// recursively fill in all generators
-		return fillInTemplate(template);
-	}
-
-	// replace <a> with appropriate indefinite article based on context
-	if (template.includes('<')) {
-		let first_word = template.substring(template.indexOf('>') + 2);
-		let replacement = indefiniteArticle(first_word);
-		template = replaceTextBetweenTags(template, replacement, '<', '>');
-		// recursively fill in all commands
-		return fillInTemplate(template);
-	}
-
-	// pick conjugation of verb based on character being singular or multiple. E.g. (is,are)
-	if (template.includes('(')) {
-
-		let options_list = getTextBetweenTags(template, '(', ')').split(',');
-		let index = (character_is_group)?1:0;
-		let option = options_list[index].trim();
-
-		template = replaceTextBetweenTags(template, option, '(', ')');
-		return fillInTemplate(template)
-	}
+        if (template.includes('@')) {
+            let command = getTextBetweenTags(template, '@', '@');
+            let replacement = 'NO REPLACEMENT FOUND';
+            let generator = command.split(':')[0];
+            let parameters = [];
+            if (command.includes(':')) {
+                parameters = command.split(':')[1].split(',');
+            }
+            switch (generator) {
+                case 'template':
+                    replacement = pickRandom('template');
+                    break;
+                case 'nouns':
+                    replacement = pickRandom('nouns');
+                    break;
+                case 'actions':
+                    replacement = pickRandom('actions');
+                    break;
+                case 'actions-singular':
+                    replacement = pickRandom('actions-singular');
+                    break;
+                case 'people':
+                    replacement = pickRandom('people');
+                    break;
+                case 'places':
+                    replacement = pickRandom('places');
+                    break;
+                case 'descriptor':
+                    replacement = pickRandom('descriptor');
+                    break;
+            }
+    
+            template = replaceTextBetweenTags(template, replacement, '@', '@');
+            // recursively fill in all generators
+            return fillInTemplate(template);
+        }
+    
+        // replace <a> with appropriate indefinite article based on context
+        if (template.includes('<')) {
+            let first_word = template.substring(template.indexOf('>') + 2);
+            let replacement = indefiniteArticle(first_word);
+            template = replaceTextBetweenTags(template, replacement, '<', '>');
+            // recursively fill in all commands
+            return fillInTemplate(template);
+        }
+	
 
 	return template;
 }
@@ -99,21 +84,13 @@ function getCategory(category_name) {
 	return getTextBetweenTags(data, start_tag, end_tag).split('\n');
 }
 
-function pickRandomOrNone(category_name, probability_exists) {
-	if (randomChance(probability_exists)) {
-		return pickRandom(category_name);
-	}
-	return '';
-}
-
 // Replace comma-separated entries inside square brackets with random entry
 function resolveOptions(text) {
-	if (text.includes('[')) {
+	while (text.includes('[')) {
 		let options = getTextBetweenTags(text, '[', ']');
 		let option = pickRandomFromList(options.split(','));
 		text = replaceTextBetweenTags(text, option, '[', ']');
 		// recursively fill in all options
-		return resolveOptions(text);
 	}
 	return text;
 }
@@ -122,20 +99,7 @@ function pickRandom(category_name) {
 	
 	let category = categories[category_name];
 	let random_index = Math.floor(Math.random() * category.length); 
-	
-	// Avoid duplicates:
-	let max_iterations = 5;
-	for (let i = 0; i < max_iterations; i ++) {
-		var result = resolveOptions(category[random_index]);
-		if (recently_used.includes(result)) {
-			random_index = (random_index + 1) % category.length;
-		}
-		else {
-			recently_used.push(result);
-			break;
-		}
-	}
-	return result;
+	return resolveOptions(category[random_index]);
 }
 
 function getTextBetweenTags(text, start_tag, end_tag) {
@@ -185,7 +149,6 @@ function formatOutput(result) {
 	result = result.replace(/ +(?= )/g,''); // replace multiple spaces with single space
 	result = result.replace(' -', '-'); // remove accidental space between hyphenated words
 	result = result.replace('- ', '-');
-	result = result[0].toUpperCase() + result.substring(1, result.length); // capitalise first letter
 	if (result.substr(-1) == ',') {
 		result = result.substring(0, result.length -1).trim();
 	}
