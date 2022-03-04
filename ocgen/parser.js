@@ -40,7 +40,26 @@ function fillInTemplate(template) {
 		if (command.includes(':')) {
 			parameters = command.split(':')[1].split(',');
 		}
-		pickRandom(generator);
+		switch (generator) {
+			case 'template':
+				replacement = pickRandom('template');
+				break;
+			case 'nouns':
+				replacement = pickRandom('nouns');
+				break;
+			case 'actions-singular':
+				replacement = pickRandom('actions-singular');
+				break;
+            case 'people':
+                replacement = pickRandom('people');
+                break;
+            case 'places':
+                replacement = pickRandom('places');
+                break;
+            case 'descriptor':
+                replacement = pickRandom('descriptor');
+                break;
+		}
 
 		template = replaceTextBetweenTags(template, replacement, '@', '@');
 		// recursively fill in all generators
