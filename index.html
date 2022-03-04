@@ -6,7 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./ocgen/data.js"></script>
     <script src="./ocgen/parser.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
         .btn
         {
@@ -15,6 +14,11 @@
             -webkit-touch-callout: none;
             -moz-user-select: none;
             -ms-user-select: none;
+            transform: translate(-50%, -50%);
+        }
+        .outputtext
+        {
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
@@ -38,14 +42,13 @@
             <h1><br><br>Draw Your OC Generator! <small><br>Out of ideas? Suffering from artblock? Try this generator for some silly sketch ideas with your ocs!</small></h1>
         </div>
         <h2>
-            <div id="content">
+            <div id="content" id="outputtext">
                 Nothing yet...
             </div>
         </h2>
+        <br>
         <div class="row show-grid">
-            <div class="span1 columns offset6">
                 <a class="btn large primary" onclick="generate()">Regenerate!</a>
-            </div>
         </div>
     </div>
 </body>
