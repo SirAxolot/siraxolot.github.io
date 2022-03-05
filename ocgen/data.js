@@ -32,12 +32,13 @@ poor old woman
 iphone
 artist
 nsfw artist
+burger
 alternate
 slice of cheese
 gay couple
 straight couple
 protogen
-really buff dude
+dude
 lesbian
 bisexual
 frog
@@ -59,9 +60,12 @@ statue
 #end
 
 #descriptor:
+really buff
 homosexual
 unfortunate
 thicc
+bad
+delicious
 red
 orange
 yellow
@@ -126,6 +130,7 @@ Mugman
 Rayman
 at least 734 McNuggets
 Nikocado Avocado
+Yae Miko
 #end
 
 #actions:
