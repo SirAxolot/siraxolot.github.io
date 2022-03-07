@@ -7,10 +7,16 @@ let recently_used = [];
 
 window.onload = function onLoad() {
 	// Store list of entries by category name
+	total = 1;
 	for (let i = 0; i < category_names.length; i ++) {
 		let name = category_names[i];
 		categories[name] = getCategory(name);
+		console.log(name + ": " + categories[name].length.toString());
+		total = total*(2^categories[name].length);
 	}
+	console.log("TOTAL POSSIBLE COMBINATIONS: " + total.toString());
+	console.log("hello inspect element users :)");
+	document.getElementById("amount").innerText = "Up to " + total.toLocaleString("en-US") + " different combinations! \n(trust me, I counted)";
 }
 
 function generate() {
@@ -37,7 +43,7 @@ function fillInTemplate(template) {
                     replacement = pickRandom('template');
                     break;
                 case 'nouns':
-                    replacement = pickRandom('nouns');
+                    replacement = genplural(parameters,'nouns');
                     break;
                 case 'actions':
                     replacement = pickRandom('actions');
@@ -46,7 +52,7 @@ function fillInTemplate(template) {
                     replacement = pickRandom('actions-singular');
                     break;
                 case 'people':
-                    replacement = pickRandom('people');
+                    replacement = genplural(parameters,'people');
                     break;
                 case 'places':
                     replacement = pickRandom('places');
@@ -54,6 +60,12 @@ function fillInTemplate(template) {
                 case 'descriptor':
                     replacement = pickRandom('descriptor');
                     break;
+				case 'numbers':
+                    replacement = processNum(pickRandom('numbers'));
+                    break;
+				case 'phrase':
+					replacement = pickRandom('phrase');
+					break;
             }
     
             template = replaceTextBetweenTags(template, replacement, '@', '@');
@@ -74,6 +86,13 @@ function fillInTemplate(template) {
 	return template;
 }
 
+function genplural(parameters,category) {
+	let use_modifers = parameters.includes('plural');
+	if (use_modifers) {
+		return pluralize(pickRandom(category));
+	}
+	return pickRandom(category);
+}
 
 // ------------------------------------ UTILITY ------------------------------------
 
@@ -122,7 +141,20 @@ function randomChance(probability) {
 	return Math.random() < probability;
 }
 
+function processNum(string) {
+	// this is so broken ill fix it later
 
+	/*if (string.length > 4)
+	{
+		return string.substr(0,string.length-3) + ',' + string.substr(-3);
+	}
+	if (string.length > 7)
+	{
+		return string.substr(0,string.length-6) + ',' + string.substr(string.length-6,string.length-4) + ',' + string.substr(-3);
+	}*/
+
+	return string;
+}
 // Returns indefinite article for given word.
 // Exceptions will need to be added if words are added to the word list.
 // TODO: Maybe replace with this?: http://home.nerbonne.org/A-vs-An/
@@ -155,4 +187,49 @@ function formatOutput(result) {
 	result = result + '.';
 	result = result.replace(' ,', ',');
 	return result;
+}
+
+function pluralize(word) {
+	// exceptions:
+	inp = word;
+	if (word.substr(0,6) == 'their ') {
+		inp = word.substr(6);
+	}
+	switch (inp) {
+	case 'fish':
+		return inp;
+	case 'catboy':
+		return 'catboys';
+	default:
+		// general rules:
+		if (inp.substr(-2) == 'ey') {
+			return inp + 's';
+		}
+		if (inp.substr(-1) == 'y') {
+			return inp.substring(0, inp.length-1) + 'ies';
+		}
+		if (inp.substr(-1) == 'h') {
+			return inp + 'es';
+		}
+		if (inp.substr(-3) == 'man') {
+			return inp.substring(0, inp.length-3) + 'men';
+		}
+		if (inp.substr(-5) == 'child') {
+			return inp + 'ren';
+		}
+		if (inp.substr(-2) == 'ss') {
+			return inp.substring(0, inp.length-2) + 'sses';
+		}
+		if (inp.substr(-2) == 'lf') {
+			return inp.substring(0, inp.length-2) + 'lves';
+		}
+		if (inp.substr(0,6) == 'their ') {
+			return inp.substr(6);
+		}
+		if (inp.substr(0,4) == 'the ') {
+			return inp.substr(4);
+		}
+
+		return inp + 's';
+	}
 }

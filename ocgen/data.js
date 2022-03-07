@@ -5,33 +5,36 @@ category_names = [
 'actions-singular',
 'people',
 'places',
-'descriptor'
+'descriptor',
+'numbers',
+'phrase'
 ];
 
 data = `
 #template:
-cosplaying as @people@
-cosplaying as <a> @nouns@
 @actions@ @people@
 @actions@ <a> @nouns@
 @actions@ <a> @descriptor@ @nouns@
 @actions-singular@
-cosplaying as @people@ [at,next to] @places@
-cosplaying as <a> @nouns@ [at,next to] @places@
-@actions@ @people@ at @places@
-@actions@ <a> @nouns@ [at,next to] @places@
-@actions@ <a> @descriptor@ @nouns@ [at,next to] @places@
-@actions-singular@ [at,next to] @places@
+@actions@ @people@ @places@
+@actions@ <a> @nouns@ @places@
+@actions@ <a> @descriptor@ @nouns@ @places@
+@actions-singular@ @places@
+@actions@ @numbers@ @nouns:plural@
+@actions@ @numbers@ @people:plural@
+@actions@ @numbers@ @nouns:plural@ @places@
+@actions@ @numbers@ @people:plural@ @places@
 #end
 
 #nouns:
 catgirl
+goldfish
 catboy
-younger version of themselves
 poor old woman
 iphone
 artist
 nsfw artist
+kink artist
 burger
 alternate
 slice of cheese
@@ -57,6 +60,14 @@ guy
 deer
 coin
 statue
+(character of your choice!)
+rock
+stick
+bone
+keyboard
+cupcake
+cake
+DJ
 #end
 
 #descriptor:
@@ -75,6 +86,22 @@ purple
 grayscale
 cool
 awesome
+cute
+masculine
+feminine
+sexy
+reluctant
+eager
+depressed
+hot
+@nouns@-obsessed
+nervous
+embarassed
+blushing
+crying
+massive
+tiny
+quirky
 #end
 
 #people:
@@ -82,9 +109,14 @@ their mom
 their dad
 their grandpa
 their cousin
+their [ass,thighs]
 the lgbtq community
 the void
-Sonic, Knuckles, and Tails
+Sonic
+Knuckles
+Tails
+Rouge the Bat
+Big the Cat
 Dr. Habit
 Kanye West
 their significant other
@@ -92,27 +124,26 @@ Bill Cipher
 some regular dude
 jinx the cat
 their computer
-whatever the hell that thing is
 Sans Undertale
 SaltyDKDan
 twitter
 their idol
 your mom
 nothing
-talking ben
+talking Ben
 their drawing tablet
-barack obama
+Barack Obama
 flappy bird
 sonic the hedgehog
 the funniest thing
 god
 jesus
 kirby
-the entire population of america
+the entire population of America
 the entirety of new york
-new zealand
+New Zealand
 markiplier
-themselves
+themself
 Scaramouche
 Paimon
 Gorou
@@ -128,29 +159,36 @@ Chuck E. Cheese
 Cuphead
 Mugman
 Rayman
-at least 734 McNuggets
 Nikocado Avocado
 Yae Miko
+Toy Chica
+Roxxane Wolf
+Glamrock Chica
+Montgomery Gator
+Papyrus
+Alphys
+Undyne
+W.D. Gaster
+Noelle
+the person reading this
 #end
 
 #actions:
+cosplaying as
 accepting
 achieveing
 acquiring
 activating
 addressing
-administering
 admiring
 admitting
 adopting
 agreeing with
 alerting
 alighting
-allowing
 altering
 amusing
 analyzing
-announcing
 annoying
 answering to
 anticipating
@@ -162,10 +200,8 @@ appraising
 appreciating
 approving
 arguing with
-arranging
+rearranging
 arresting
-arriving
-ascertaining
 assembling
 assessing
 assisting
@@ -174,28 +210,22 @@ attaining
 attracting
 avoiding
 awakening
-backing
 baking
 balancing
 banning
 banging
-baring
 batting
 bathing
 battling
 beaming
-bearing
 beating
 becoming
-begging
-beginning
+begging for
 beholding
 belonging to
 bending
-besetting
 betting on
 bidding for
-binding
 biting
 bleaching
 blessing
@@ -203,23 +233,21 @@ blinding
 blotting
 blowing
 boiling
-bolting
+bolting towards
 bombing
 booking
 boring
 borrowing
 bouncing
-bowing
-boxing
-branching
+bowing to
+boxing with
+branching out to
 breaking
-breathing
-briefing
+breathing on
 bringing
 broadcasting
 bruising
 brushing
-bubbling
 budgeting
 building
 bumping
@@ -228,139 +256,101 @@ bursting
 burying
 burping
 buying
-buzzing
-calculating
 calling
-camping
-caring
+camping with
+caring for
 carrying
 carving
-casting
-cataloging
+catalouging
 catching
-causing
 challenging
 changing
 charging
-charting
 chasing
-cheating
-checking
-cheering
+cheating on
+checking on
+cheering for
 chewing
 choking
-choosing
+choosing between [<a> @noun@,@person@] and
 chopping
 claiming
-claping
+clapping for
 clarifying
 classifying
 cleaning
-clearing
-clinging
+clinging onto
 clipping
 closing
-clothing
+putting clothes on
 coaching
 coiling
 collecting
 coloring
 combing
-coming
 commanding
-communicating
-comparing
-competing
-compiling
-complaining
-completing
-composing
-computing
+communicating with
+comparing themselves to
+competing against
 conceiving
-concentrating
+concentrating on
 conceptualizing
-concerning
-concluding
-conducting
-confessing
+confessing to
 confronting
-confusinging
-connecting
-conserving
+confusing
+connecting with
 considering
-consisting
 consolidating
 constructing
 consulting
 containing
-continuing
-contracting
 controlling
 converting
-coordinating
 copying
 correcting
-correlating
-costing
-coughing
-counseling
-counting
+coughing on
 covering
-cracking
-crashing
-crawling
+cracking open
+crashing into
+crawling [under,over,next to,towards]
 creating
-creeping
+creeping [under,over,next to,towards]
 critiquing
 crossing
 crushing
+crushing [<a> @nouns@, @person@] with
 crying
 curing
-curling
-curving
 cutting
-cycling
+cycling with
 damning
 damaging
-dancing
-daring
-dealing
-decaying
+dancing with
+dealing with
 deceiving
-deciding
 decorating
-defining
-delaying
-delegating
+delegating with
 delighting
 delivering
-demonstrating
 depending
 describing
 deserting
-deserving
 designing
 destroying
 detailing
 detecting
-determining
 developing
-devising
-diagnosing
-digging
 directing
-disagreeing
-disappearing
-disapproving
+disagreeing with
+disapproving of
 disarming
 discovering
 disliking
 dispensing
 displaying
-disproving
 dissecting
 distributing
-diving
+diving into
 diverting
 dividing
 doing
@@ -371,17 +361,14 @@ dragging
 draining
 dramatizing
 drawing
-dreaming
-dressing
+dreaming about
+dressing up as
 drinking
-dripping
-driving
+driving towards
 dropping
 drowning
-drumming
 drying
 dusting
-dwelling
 earning
 eating
 editing
@@ -390,46 +377,33 @@ eliminating
 embarrassing
 employing
 emptying
-enacting
 encouraging
 ending
-enduring
-enforcing
 engineering
 enhancing
 enjoying
-enlisting
-ensuring
 entering
 entertaining
 escaping
 establishing
-estimating
 evaluating
 examining
-exceeding
 exciting
 excusing
 executing
-exercising
-exhibiting
-existing
+exercising with
 expanding
 expecting
 expediting
-experimenting
-explaining
+experimenting on
+explaining what [<a> @nouns@,@people@] is to
 exploding
-expressing
 extending
 extracting
 facing
 facilitating
-fading
 failing
-fancying
-farting
-fastening
+farting on
 faxing
 fearing
 feeding
@@ -437,204 +411,138 @@ feeling
 fencing
 fetching
 fighting
-filing
 filling
 filming
-finalizing
 financing
 finding
-firing
-fitting
+firing at
 fixing
-flapping
-flashing
-fleeing
+fleeing from
 flinging
 floating
 flooding
-flowing
 flowering
 flying
 folding
 following
 fooling
-forbidding
 forcing
-forecasting
-foregoing
-foreseeing
-foretelling
-forgeting
+forgetting about
 forgiving
 forming
-formulating
-forsaking
 framing
 freezing
 frightening
 frying
 gathering
-gazing
+gazing at
 generating
 getting
-giving
-glowing
-gluing
-going
-governing
+giving [<a> @nouns@,@people@,you]
+going to
 grabbing
-graduating
-grating
+graduating with
 greasing
 greeting
-grinning
+grinning at
 grinding
 gripping
 groaning
-growing
-guaranteeing
 guarding
-guessing
 guiding
 hammering
-handing
+handing [<a> @nouns@,@people@,you]
 handling
-handwriting
 hanging
-happening
 harassing
 harming
 hating
 haunting
-heading
+heading towards
 healing
-heaping
 hearing
 heating
 helping
-hiding
+hiding from
 hitting
 holding
-hooking
-hopping
-hoping
-hovering
+hovering above
 hugging
-humming
 hunting
-hurrying
 hurting
-hypothesizing
 identifying
 ignoring
 illustrating
 imagining
-implementing
 impressing
 improving
-improvising
-including
 increasing
 inducing
+inflating 
 influencing
-informing
-initiating
 injecting
 injuring
-inlaying
-innovating
-inputting
 inspecting
 inspiring
 installing
-instituting
-instructing
-insuring
-integrating
-intending
 intensifying
-interesting
-interfering
-interlaying
-interpreting
 interrupting
 interviewing
-introducing
 inventing
 investigating
-inviting
 irritating
 itching
 jailing
-jamming
-jogging
-joining
-joking
+jogging with
+joking about
 judging
 juggling
-jumping
+jumping on
 justifying
 keeping
 kicking
 killing
 kissing
-kneeling
 knitting
-knocking
+knocking on
 knotting
-knowing
 labeling
-landing
-lasting
-laughing
+landing on
+laughing at
 launching
 laying
-leading
-leaning
-leaping
-learning
+leaning on
+leaping [towards, away from]
+learning about
 leaving
 lecturing
-lending
-letting
-leveling
+leveling up
 licensing
 licking
-lying
-lifting
+lying to
+lifting up
 lighting
-lightening
 liking
-listing
-listening
-livinging
-loading
+listening to
 locating
-locking
-logging
-longing
-looking
+locking up
+longing for
+looking at
 losing
 loving
 maintaining
 making
-manning
 managing
 manipulating
 manufacturing
-mapping
-marching
+marching [towards,away from]
 marking
 marketing
 marrying
-matching
-mating
-mattering
-meaning
+matching with
 measuring
-meddling
-mediating
-meeting
+mediating on
+meeting with
 melting
 memorizing
 mending
@@ -646,380 +554,237 @@ missing
 misspelling
 mistaking
 misunderstanding
-mixing
-moaning
+moaning at
 modeling
 modifying
 monitoring
-mooring
 motivating
-mourning
+mourning the loss of
 moving
 mowing
-muddling
 mugging
 multiplying
 murdering
 nailing
 naming
-navigating
 needing
-negotiating
-nesting
-nodding
-nominating
-normalizing
-noting
+negotiating with
 noticing
-numbering
 obeying
-objecting
 observing
 obtaining
-occuring
 offending
-offering
-officiating
 opening
 operating
 ordering
 organizing
-orienting
 originating
 overcoming
-overdoing
 overdrawing
-overflowing
 overhearing
 overtaking
 overthrowing
-owing
 owning
 packing
-paddling
 painting
 parking
-parting
-participating
-passing
-pasting
+parting with
+passing by
 patting
 pausing
 paying
-pecking
-pedaling
+pecking at
 peeling
-peeping
+peeping in on
 perceiving
 perfecting
-performing
 permitting
 persuading
 phoning
 photographing
-picking
-piloting
+picking up
 pinching
-pining
-pinpointing
-pioneering
+pinpointing the location of
 placing
-planning
 planting
-playing
-pleading
+playing with
+pleading for
 pleasing
-plugging
-pointing
-poking
+plugging in
+pointing at
+poking at
 polishing
 popping
 possessing
 posting
-pouring
-practicing
 praising
-praying
-preaching
-preceding
+praying to
+preaching to
 predicting
-prefering
 preparing
-prescribing
 presenting
 preserving
-preseting
-presiding
 pressing
-pretending
-preventing
+pretending to be
 pricking
 printing
-processing
-procuring
 producing
-professing
-programing
+programming
 progressing
-projecting
-promising
+projecting onto
 promoting
 proofreading
-proposing
+proposing to
 protecting
-proving
 providing
 publicizing
-pulling
+pulling on
 pumping
 punching
 puncturing
 punishing
 purchasing
 pushing
-putting
-qualifying
+putting down
 questioning
-queuinging
-quitting
+queuing
 racing
-radiating
-raining
 raising
 ranking
 rating
-reaching
-reading
+reaching for
+reading a book about
 realigning
-realizing
-reasoning
+reasoning with
+attempting to reason with
 receiving
 recognizing
 recommending
-reconciling
 recording
-recruiting
-reducing
-refering
 reflecting
 refusing
-regretting
 regulating
 rehabilitating
-reigning
 reinforcing
 rejecting
-rejoicing
-relating
+relating to
 relaxing
 releasing
-relying
-remaining
+relying on
 remembering
 reminding
 removing
 rendering
 reorganizing
 repairing
-repeating
 replacing
-replying
+replying to
 reporting
 representing
-reproducing
 requesting
 rescuing
 researching
-resolving
-responding
+responding to
 restoring
 restructuring
-retiring
 retrieving
 returning
 reviewing
-revising
-rhyming
 riding
-ringing
 rinsing
-rising
-risking
 robbing
 rocking
 rolling
-rotting
 rubbing
 ruining
-ruling
-running
-rushing
+running [towards,past,away from]
+rushing [towards,past,away from]
 sacking
-sailing
 satisfying
 saving
-sawing
-saying
 scaring
 scatterring
-scheduling
 scolding
 scorching
 scraping
 scratching
-screaming
+screaming at
 screwing
-scribbling
 scrubbing
-sealing
-searching
-securing
+searching for
 seeing
-seeking
 selecting
 selling
-sending
 sensing
-separating
+separating from
 serving
 servicing
-setting
-settling
 sewing
 shading
 shaking
-shaping
-sharing
 shaving
-shearing
-shedding
 sheltering
-shining
 shivering
 shocking
-shoeing
 shooting
-shopping
-showing
+shopping with
 shrinking
-shrugging
-shutting
-sighing
-signing
-signaling
+shuttin
 simplifying
-sinning
-singing
 sinking
 sipping
-sitting
+sitting on
 sketching
-skiing
-skipping
 slapping
 slaying
-sleeping
-sliding
-slinging
-slinking
-slipping
-slitting
-slowing
+sleeping with
 smashing
 smelling
-smiling
+smiling at
 smiting
-smoking
 snatching
-sneaking
-sneezing
 sniffing
-snoring
-snowing
 soaking
-solving
 soothing
-sorting
-sounding
-sowing
 sparing
-sparking
-sparkling
-speaking
-specifying
-speeding
-spelling
-spending
-spilling
+speeding by
 spinning
-spitting
+spitting on
 splitting
 spoiling
 spotting
 spraying
-spreading
-springing
-sprouting
 squashing
-squeaking
-squealing
 squeezing
-staining
 stamping
-standing
-staring
-starting
-staying
+staring at
 stealing
-steering
-stepping
-sticking
+stepping on
 stimulating
 stinging
-stinking
-stirring
 stitching
 stopping
-storing
-strapping
-streamlining
 strengthening
 stretching
-striding
 striking
 stringing
 stripping
-striving
 stroking
-structuring
 studying
 stuffing
-subletting
-subtracting
-succeeding
-suffering
-suggesting
 suiting
 summarizing
 supervising
 supplying
 supporting
-supposing
 surprising
 surrounding
-suspecting
 suspending
 swearing at
-sweating
-sweeping
-swelling
-swimming
-swinging
-switching
+swimming with
+swinging at
 symbolizing
 synthesizing
-systemizing
-tabulating
 taking
 talking to
 taming
@@ -1028,128 +793,84 @@ taping
 targeting
 tasting
 teaching
-tearing
 teasing
 telephoning
-telling
 tempting
 terrifying
 testing
 thanking
 thawing
-thinking
-thriving
+thinking about
 throwing
-thrusting
-ticking
 tickling
 tying
 timing
 tipping
 tiring
 touching
-touring
 towing
 tracing
-trading
+trading with
 training
-transcribing
-transferring
 transforming
-translating
 transporting
 trapping
-traveling
-treading
 treating
-trembling
 tricking
-tripping
-trotting
+tripping over
 troubling
 troubleshooting
 trusting
-trying
-tugging
-tumbling
+tugging on
 turning
 tutoring
 twisting
-typing
-undergoing
 understanding
-undertaking
 undressing
-unfastening
-unifying
-uniting
 unlocking
-unpacking
-untidying
 updating
 upgrading
-upholding
 upsetting
 using
-utilizing
-vanishing
-verbalizing
-verifying
 vexing
-visit
-voring (im sorry)
-wailing
-waiting
-waking
-walking
-wandering
+visiting
+voring
+waiting for
+walking [towards,past,away from]
+wandering [towards,past,away from]
 wanting
 warming
 warning
 washing
-wasting
 watching
 watering
-waving
 wearing
-weaving
 weeding
-weeping
 weighing
 welcoming
-wending
-wetting
-whining
+whining about
 whipping
 whirling
-whispering
-whistling
+whispering to
 winning
-winding
-winking
 wiping
-wishing
-withdrawing
-withholding
-withstanding
-wobbling
-wondering
-working
-worrying
-wrapping
+wishing for
+working for
+worrying about
 wrecking
 wrestling
-wriggling
 wringing
 writing
 x-raying
-yawning
 yelling at
-zipping
-zooming towards
+zipping [towards,past,away from]
+zooming [towards,past,away from]
 #end
 
 #actions-singular:
+[hitting, beating, bullying] [@people@,<a> @nouns@] with <a> [bat, hammer, spoon]
+contracting the @descriptor@ [disease,virus]
+doing [meth,cocaine,drugs,lean,crack,weed]
 apologizing
 applauding
 arising
@@ -1455,20 +1176,45 @@ working
 worrying
 wriggling
 wringing
-writing
+writing a [positive,negative] review on their [favorite,least favorite] [game,book,movie]
 yawning
 yelling
+giving birth (sorry)
 #end
 
 #places:
-an Arby's
-a Burger King
-Disney Land
-a Chipotle
-a Crispy Creme
-a bus stop
-your mom's house
-a McDonalds
-a gas station
+at an Arby's
+at Burger King
+at Disney Land
+at Chipotle
+at Crispy Creme
+at a bus stop
+at your [mom,dad,sister]'s house
+at McDonalds
+at a gas station
+AT [1,2,3,4] A.M. [(NOT CLICKBAIT),(COPS CALLED),(GONE SEXUAL),(GONE WRONG)]
+with a crippling [porn,drug,sex] addiction
+while @actions@ them
+#end
+
+#numbers:
+[2,3,4,5,6,7,8,9,10]
+a hundred
+a thousand
+a million
+a billion
+a trillion
+a massive amount of
+a group of
+a crowd of
+an uncountable amount of
+#end
+
+#phrase:
+Trans rights
+Your mom
+I'm gay
+You're gay
+Not Funny
 #end
 `;
