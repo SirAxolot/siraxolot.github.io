@@ -27,22 +27,14 @@ data = `
 #end
 
 #nouns:
-catgirl
 goldfish
-catboy
 poor old woman
 iphone
 artist
-nsfw artist
-kink artist
 burger
 slice of cheese
-gay couple
-straight couple
 protogen
 dude
-lesbian
-bisexual
 frog
 dog
 cat
@@ -54,7 +46,6 @@ moth
 butterfly
 skeleton
 cow
-deviantart drawing
 guy
 deer
 coin
@@ -70,14 +61,11 @@ DJ
 
 #descriptor:
 really buff
-homosexual
 unfortunate
-thicc
 plump
 fat
 bad
 cheeky
-delicious
 red
 orange
 yellow
@@ -88,20 +76,13 @@ grayscale
 cool
 awesome
 cute
-masculine
-feminine
-sexy
 reluctant
 eager
 depressed
-hot
 @nouns@-obsessed
 nervous
 embarassed
-blushing
 crying
-massive
-humongus
 tiny
 quirky
 one-eyed
@@ -132,8 +113,6 @@ their mom
 their dad
 their grandpa
 their cousin
-their [ass,thighs]
-the lgbtq community
 the void
 Sonic
 Knuckles
@@ -142,14 +121,12 @@ Rouge the Bat
 Big the Cat
 Dr. Habit
 Kanye West
-their significant other
 Bill Cipher
 some regular dude
 jinx the cat
 their computer
 Sans Undertale
 SaltyDKDan
-twitter
 their idol
 your mom
 nothing
@@ -157,7 +134,6 @@ talking Ben
 their drawing tablet
 Barack Obama
 flappy bird
-the funniest thing
 god
 jesus
 kirby
@@ -181,7 +157,6 @@ Chuck E. Cheese
 Cuphead
 Mugman
 Rayman
-Nikocado Avocado
 Yae Miko
 Toy Chica
 Roxxane Wolf
@@ -192,11 +167,9 @@ Alphys
 Undyne
 W.D. Gaster
 Noelle
-the person reading this
 #end
 
 #actions:
-cosplaying as
 accepting
 achieveing
 acquiring
@@ -569,7 +542,6 @@ melting
 memorizing
 mending
 mentoring
-microwaving
 milking
 mining
 misleading
@@ -618,7 +590,6 @@ pausing
 paying
 pecking at
 peeling
-peeping in on
 perceiving
 perfecting
 permitting
@@ -626,8 +597,6 @@ persuading
 phoning
 photographing
 picking up
-pinching
-pinpointing the location of
 placing
 planting
 playing with
@@ -635,7 +604,7 @@ pleading for
 pleasing
 plugging in
 pointing at
-poking
+poking at
 polishing
 popping
 possessing
@@ -857,7 +826,6 @@ upsetting
 using
 vexing
 visiting
-voring
 waiting for
 walking [towards,past,away from]
 wandering [towards,past,away from]
@@ -891,9 +859,6 @@ zooming [towards,past,away from]
 #end
 
 #actions-singular:
-[hitting, beating, bullying] [@people@,<a> @nouns@] with <a> [bat, hammer, spoon]
-contracting the @descriptor@ [disease,virus]
-doing [meth,cocaine,drugs,lean,crack,weed]
 apologizing
 applauding
 arising
@@ -901,7 +866,6 @@ awakening
 baking
 balancing
 batting
-bathing
 battling
 begging
 behaving
@@ -910,16 +874,12 @@ bidding
 blinking
 blushing
 boasting
-boiling
 bouncing
 bowing
 boxing
 breaking
 breathing
-burning
 bursting
-burping
-busting
 buzzing
 calculating
 camping
@@ -928,7 +888,6 @@ charting
 cheating
 cheering
 chewing
-choking
 clapping
 cleaning
 coloring
@@ -981,6 +940,7 @@ fencing
 fetching
 fighting
 filming
+floating
 flying
 folding
 forecasting
@@ -1211,11 +1171,8 @@ at Disney Land
 at Chipotle
 at Crispy Creme
 at a bus stop
-at your [mom,dad,sister]'s house
 at McDonalds
 at a gas station
-AT [1,2,3,4] A.M. [(NOT CLICKBAIT),(COPS CALLED),(GONE SEXUAL),(GONE WRONG)]
-with a crippling [porn,drug,sex] addiction
 while @actions@ them
 #end
 

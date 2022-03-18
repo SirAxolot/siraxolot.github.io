@@ -16,7 +16,6 @@ window.onload = function onLoad() {
 	}
 	console.log("TOTAL POSSIBLE COMBINATIONS: " + total.toString());
 	console.log("hello inspect element users :)");
-	document.getElementById("amount").innerText = "Up to " + total.toLocaleString("en-US") + " different combinations! \n(trust me, I counted)";
 }
 
 function generate() {
