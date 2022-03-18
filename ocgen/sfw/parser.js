@@ -205,6 +205,8 @@ function pluralize(word) {
 		return 'thighs';
 	case 'Knuckles' || 'Tails' || 'goldfish' || 'fish':
 		return inp;
+	case 'moth':
+		return 'moths';
 	// cases that don't make sense, just put dudes
 	case 'their significant other' || 'some regular dude' || 'your mom' || 'the funniest thing' || 'the entire population of America' || 'the entirety of new york' || 'the person reading this':
 		return 'dudes';

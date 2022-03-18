@@ -760,8 +760,6 @@ strengthening
 stretching
 striking
 stringing
-stripping
-stroking
 studying
 stuffing
 suiting
