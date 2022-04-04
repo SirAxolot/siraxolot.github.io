@@ -103,6 +103,7 @@ crying
 massive
 humongus
 tiny
+invisible
 quirky
 one-eyed
 bored
@@ -128,6 +129,13 @@ friendly
 #end
 
 #people:
+Dave
+Bambi
+Bandu
+Badai
+Bendu
+Expunged
+Tristan
 their mom
 their dad
 their grandpa
