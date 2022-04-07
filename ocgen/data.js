@@ -123,6 +123,62 @@ friendly
 #end
 
 #people:
+Whitty
+Tricky
+Garcello
+NeedleM0use
+Edd
+Tord
+Matt ([Eddsworld,Wii Sports])
+Zardy
+Tom
+Monika
+Sayori
+Natsuki
+Yuri
+Kapi
+Eteled
+Austin (WDY)
+Scout (TF2)
+Soldier (TF2)
+Pyro (TF2)
+Demoman (TF2)
+Heavy (TF2)
+Engineer (TF2)
+Medic (TF2)
+Spy (TF2)
+Sniper (TF2)
+Saxton Hale
+Cassette Girl
+Mario.exe
+Mario
+Luigi
+Bowser
+Sonic.exe
+Kris
+Susie
+Ralsei
+Jevil
+Spamton
+Asriel
+Flowey
+G-Man
+BonziBuddy
+Spongebob
+Animdude
+RWQFSFASXC
+Ankha
+[Apollo,Audie,Beau] (AC)
+[Bob,Cherry,Dom,Flora] (AC)
+[Freya,Fuschia,Goldie,Judy] (AC)
+[Ketchup,Kid Cat,Lolly] (AC)
+[Lucky,Maple,Marina,Mint] (AC)
+[Muffy,Nibbles,Paolo,Pietro,Punchy] (AC)
+[Roald,Rosie,Ruby,Scoot] (AC)
+[Sasha,Marshal,Raymond,Sherb] (AC)
+[Shino,Stitches,Tad,Tangy] (AC)
+[Whitney,Wolfgang,Zucker] (AC)
+[Meow,Bow] (AC)
 Dave
 Bambi
 Bandu
@@ -1218,6 +1274,6 @@ at McDonalds
 at a gas station
 AT [1,2,3,4] A.M. [(NOT CLICKBAIT),(COPS CALLED),(GONE SEXUAL),(GONE WRONG)]
 with a crippling [porn,drug,sex] addiction
-while @actions@ them
+while @actions-singular@
 #end
 `;

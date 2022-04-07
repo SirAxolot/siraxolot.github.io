@@ -43,7 +43,7 @@ function fillInTemplate(template) {
                     replacement = pickRandom('template');
                     break;
                 case 'nouns':
-                    replacement = genplural(parameters,'nouns');
+                    replacement = pickRandom('nouns');
                     break;
                 case 'actions':
                     replacement = pickRandom('actions');
@@ -52,7 +52,7 @@ function fillInTemplate(template) {
                     replacement = pickRandom('actions-singular');
                     break;
                 case 'people':
-                    replacement = genplural(parameters,'people');
+                    replacement = pickRandom('people');
                     break;
                 case 'places':
                     replacement = pickRandom('places');
@@ -60,12 +60,6 @@ function fillInTemplate(template) {
                 case 'descriptor':
                     replacement = pickRandom('descriptor');
                     break;
-				case 'numbers':
-                    replacement = processNum(pickRandom('numbers'));
-                    break;
-				case 'phrase':
-					replacement = pickRandom('phrase');
-					break;
             }
     
             template = replaceTextBetweenTags(template, replacement, '@', '@');
