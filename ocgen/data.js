@@ -5,9 +5,7 @@ category_names = [
 'actions-singular',
 'people',
 'places',
-'descriptor',
-'numbers',
-'phrase'
+'descriptor'
 ];
 
 data = `
@@ -20,10 +18,6 @@ data = `
 @actions@ <a> @nouns@ @places@
 @actions@ <a> @descriptor@ @nouns@ @places@
 @actions-singular@ @places@
-@actions@ @numbers@ @nouns:plural@
-@actions@ @numbers@ @people:plural@
-@actions@ @numbers@ @nouns:plural@ @places@
-@actions@ @numbers@ @people:plural@ @places@
 #end
 
 #nouns:
@@ -1225,22 +1219,5 @@ at a gas station
 AT [1,2,3,4] A.M. [(NOT CLICKBAIT),(COPS CALLED),(GONE SEXUAL),(GONE WRONG)]
 with a crippling [porn,drug,sex] addiction
 while @actions@ them
-#end
-
-#numbers:
-[2,3,4,5,6,7,8,9,10]
-a hundred
-a thousand
-a million
-a billion
-infinite
-#end
-
-#phrase:
-Trans rights
-Your mom
-I'm gay
-You're gay
-Not Funny
 #end
 `;
