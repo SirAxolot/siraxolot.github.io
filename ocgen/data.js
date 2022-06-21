@@ -27,8 +27,6 @@ catboy
 poor old woman
 iphone
 artist
-nsfw artist
-kink artist
 burger
 slice of cheese
 gay couple
@@ -48,7 +46,6 @@ moth
 butterfly
 skeleton
 cow
-deviantart drawing
 guy
 deer
 coin
@@ -166,7 +163,6 @@ G-Man
 BonziBuddy
 Spongebob
 Animdude
-RWQFSFASXC
 Ankha
 [Apollo,Audie,Beau] (AC)
 [Bob,Cherry,Dom,Flora] (AC)
