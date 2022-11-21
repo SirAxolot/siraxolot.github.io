@@ -22,7 +22,7 @@ function process(inp)
         {
             if (inplower[j] == adjArray[i]) inplower[j] = 'SCREWED';
             if (inplower[j] + 'ing' == adjArray[i] || inplower[j].substring(0,inplower[j].length-1) + 'ing' == adjArray[i] || inplower[j].substring(0,inplower[j].length-2) + 'ing' == adjArray[i]) inplower[j] = 'SCREWing';
-	    if (inplower[j] - 's' == adjArray[i]) inplower[j] = 'SCREWEDs'; 
+	    if (inplower[j].substring(0,inplower[j].length-1) == adjArray[i] && inplower[j].substring(inplower[j].length-1,inplower[j].length) == 's') inplower[j] = 'SCREWEDs'; 
         }
     }
     let outp = inplower.join(' ');
