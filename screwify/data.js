@@ -3,7 +3,8 @@ adj =
 Abdominal
 Abhorrent
 Abject
-Able,Abnormal
+Able
+Abnormal
 Abrasive
 Abrupt
 Absent
