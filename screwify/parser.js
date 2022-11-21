@@ -15,8 +15,6 @@ function generate() {
 
 function process(inp)
 {
-    // split input into an array to prevent clbuttic stuff from happening
-    // yes i learned that word from tom scott
     let inplower = inp.toLowerCase().split(' ');
     for (let i = 0; i < adjArray.length; i++)
     {
@@ -24,6 +22,7 @@ function process(inp)
         {
             if (inplower[j] == adjArray[i]) inplower[j] = 'SCREWED';
             if (inplower[j] + 'ing' == adjArray[i] || inplower[j].substring(0,inplower[j].length-1) + 'ing' == adjArray[i] || inplower[j].substring(0,inplower[j].length-2) + 'ing' == adjArray[i]) inplower[j] = 'SCREWing';
+	    if (inplower[j] - 's' == adjArray[i]) inplower[j] = 'SCREWEDs'; 
         }
     }
     let outp = inplower.join(' ');
