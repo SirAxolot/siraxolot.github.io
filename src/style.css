@@ -1,5 +1,4 @@
 /* very unorganized but i could care less */
-
 :root {
     --bevel: 0px 10px 10px rgba(255, 250, 183, 0.2) inset, 0px -10px 10px rgba(34, 0, 61, 0.226) inset;
     --shadow: 0 4px 8px 0 rgba(41, 8, 56, 0.2), 0 6px 20px 0 rgba(41, 8, 56, 0.2);
@@ -12,13 +11,16 @@ body {
     background-position: right top;
     background-attachment: fixed;
     position: relative;
-    font-family: 'Comic Sans MS';
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif;
 }
 
 #mainstuff {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    max-width: 1000px;
+}
+
+#mainstuff h1 {
+    text-align: center;
 }
 
 #sidebar {
